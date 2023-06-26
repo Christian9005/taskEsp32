@@ -44,7 +44,7 @@ interface Tag {
 
 const App: FC = () => {
   const [isLoggedIn, setLoggedIn] = useState(false);
-  const [userRole, setUserRole] = useState<UserRole | null>(null);
+  const [, setUserRole] = useState<UserRole | null>(null);
   const [tasks, setTasks] = useState<Task[]>([]);
   const [groups, setGroups] = useState<Group[]>([]);
   const [tags, setTags] = useState<Tag[]>([]);
