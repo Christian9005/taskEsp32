@@ -17,7 +17,3 @@ _
 /src/components/molecules/TagTable/TagTable.scss,b\0\b0427cd8fc51b2af42606ce9f59f0b754c318d17
 b
 2src/components/molecules/TasksTable/TaskTable.scss,f\a\fa401833a784f3685899a1031ab188595a832a28
-c
-3src/components/atoms/Notification/Notificacion.scss,9\2\92eeecd4d2adad90dbc118e57e488b2b6871226c
-b
-2src/components/atoms/Notification/Notificacion.tsx,1\9\1911aa77407d957ebdc09db8e089b80f04cb1b8a
