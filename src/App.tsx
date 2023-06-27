@@ -37,6 +37,7 @@ interface Task {
 interface Tag {
   id: number;
   codeNumber: string;
+  customId: number;
 }
 
 const App: FC = () => {
@@ -123,8 +124,10 @@ const App: FC = () => {
   const handleCreateTag = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     try {
       const tagElement = document.getElementById('tag') as HTMLInputElement;
+      const customIdElement = document.getElementById('customId') as HTMLInputElement; // Obtén el valor de customId
       const newTagData = {
         codeNumber: tagElement.value,
+        customId: customIdElement.value // Agrega el valor de customId en los datos enviados
       };
       const response = await axios.post('https://esp32api.azurewebsites.net/api/Tags', newTagData);
       setTags((prevTags) => [...prevTags, response.data]);
@@ -236,6 +239,8 @@ const App: FC = () => {
     fetchTags();
     fetchPeople();
   }, []);
+
+
 
   const handleLogin = async (username: string, password: string) => {
     try {
@@ -377,7 +382,11 @@ const App: FC = () => {
           <Modal.Body>
             <div>
               <label>Número de código:</label>
-              <input type="text" id="tag" /> {/* Asegúrate de tener el atributo "id" como "tag" */}
+              <input type="text" id="tag" />
+            </div>
+            <div> {/* Agrega un nuevo campo para el customId */}
+              <label>ID personalizado:</label>
+              <input type="text" id="customId" />
             </div>
           </Modal.Body>
           <Modal.Footer>
