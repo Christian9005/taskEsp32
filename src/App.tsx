@@ -257,13 +257,6 @@ const App: FC = () => {
 
   return (
       <div className="app">
-        {/*<TaskTable*/}
-        {/*    tasks={tasks}*/}
-        {/*    groups={groups}*/}
-        {/*    people={people}*/}
-        {/*    onDeleteTask={handleDeleteTask}*/}
-        {/*    isLoggedIn={false}*/}
-        {/*/>*/}
         <nav>
           <h1>Web App</h1>
           {isLoggedIn ? (

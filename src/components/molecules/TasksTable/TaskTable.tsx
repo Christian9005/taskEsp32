@@ -103,6 +103,11 @@ const TaskTable: FC<TaskTableProps> = ({
         setModalVisible(false);
     };
 
+    const formatDateTime = (dateTime: string) => {
+        const date = new Date(dateTime);
+        return date.toLocaleString();
+    };
+
     return (
         <>
             <table className="task-table">
@@ -124,8 +129,8 @@ const TaskTable: FC<TaskTableProps> = ({
                     return (
                         <tr key={task.id}>
                             <td>{task.tagId}</td>
-                            <td>{task.startTime}</td>
-                            <td>{task.endTime}</td>
+                            <td>-</td>
+                            <td>{formatDateTime(task.endTime as string)}</td>
                             <td>
                                 {person && (
                                     <span onClick={() => handlePersonSelect(person)}>
