@@ -27,14 +27,11 @@ interface Group {
 
 interface Task {
   id: number;
-  tagId: number;
+  tagId: number | null;
   startTime: string;
-  endTime: string;
+  endTime: string | null;
   personId: number | null;
-  person: Person | null;
   groupId: number | null;
-  group: Group | null;
-  completedTasks: number;
 }
 
 interface Tag {
@@ -260,6 +257,13 @@ const App: FC = () => {
 
   return (
       <div className="app">
+        {/*<TaskTable*/}
+        {/*    tasks={tasks}*/}
+        {/*    groups={groups}*/}
+        {/*    people={people}*/}
+        {/*    onDeleteTask={handleDeleteTask}*/}
+        {/*    isLoggedIn={false}*/}
+        {/*/>*/}
         <nav>
           <h1>Web App</h1>
           {isLoggedIn ? (
@@ -272,7 +276,7 @@ const App: FC = () => {
         </nav>
         <div>
           <h1>Tabla de Tareas</h1>
-          <TaskTable tasks={tasks} onDeleteTask={handleDeleteTask} isLoggedIn={isLoggedIn} />
+          <TaskTable tasks={tasks} groups={groups} people={people} onDeleteTask={handleDeleteTask} isLoggedIn={isLoggedIn} />
           {isLoggedIn && (
               <>
                 <Button variant="primary" onClick={() => setOpenCreateTaskModal(true)}>Crear Tarea</Button>
