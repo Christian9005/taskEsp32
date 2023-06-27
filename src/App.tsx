@@ -28,7 +28,7 @@ interface Group {
 interface Task {
   id: number;
   tagId: number | null;
-  tag: Tag;
+  tag: Tag | null;
   startTime: string;
   endTime: string | null;
   personId: number | null;
@@ -38,7 +38,7 @@ interface Task {
 interface Tag {
   id: number;
   codeNumber: string;
-  customId: number;
+  customId: number | null;
 }
 
 const App: FC = () => {
