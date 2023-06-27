@@ -28,6 +28,7 @@ interface Group {
 interface Task {
   id: number;
   tagId: number | null;
+  tag: Tag;
   startTime: string;
   endTime: string | null;
   personId: number | null;

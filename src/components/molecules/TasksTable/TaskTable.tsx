@@ -4,9 +4,15 @@ import Notification from '../../atoms/Notification/Notificacion';
 import { Button, Modal } from 'react-bootstrap';
 import axios from "axios";
 
+interface Tag {
+    id: number;
+    codeNumber: string;
+    customId: number;
+}
 interface Task {
     id: number;
     tagId: number | null;
+    tag: Tag;
     startTime: string;
     endTime: string | null;
     personId: number | null;
@@ -128,7 +134,7 @@ const TaskTable: FC<TaskTableProps> = ({
 
                     return (
                         <tr key={task.id}>
-                            <td>{task.tagId}</td>
+                            <td>{task.tag.customId}</td>
                             <td>-</td>
                             <td>{formatDateTime(task.endTime as string)}</td>
                             <td>

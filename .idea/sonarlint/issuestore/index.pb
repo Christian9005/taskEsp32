@@ -16,4 +16,4 @@ d
 _
 /src/components/molecules/TagTable/TagTable.scss,b\0\b0427cd8fc51b2af42606ce9f59f0b754c318d17
 b
-2src/components/molecules/TasksTable/TaskTable.scss,f\a\fa401833a784f3685899a1031ab188595a832a28
+2src/components/molecules/GroupTable/GroupTable.tsx,4\0\401eebbe5b1eec3ca3d0a166b21ad62d8021af57
