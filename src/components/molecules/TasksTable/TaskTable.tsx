@@ -128,6 +128,33 @@ const TaskTable: FC<TaskTableProps> = ({
                 </tr>
                 </thead>
                 <tbody>
+                {groups.map((group) => (
+                    <tr key={group.id}>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>
+                <span onClick={() => handleGroupSelect(group)}>
+                  {group.name} (Grupo)
+                </span>
+                        </td>
+                        <td>-</td>
+                    </tr>
+                ))}
+                {people.map((person) => (
+                    <tr key={person.id}>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>
+                <span onClick={() => handlePersonSelect(person)}>
+                  {person.name} {person.lastName} (Persona)
+                </span>
+                        </td>
+                        <td>-</td>
+                        <td></td>
+                    </tr>
+                ))}
                 {tasks.map((task) => {
                     const person = people.find((p) => p.id === task.personId);
                     const group = groups.find((g) => g.id === task.groupId);
@@ -163,33 +190,6 @@ const TaskTable: FC<TaskTableProps> = ({
                         </tr>
                     );
                 })}
-                {groups.map((group) => (
-                    <tr key={group.id}>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>
-                <span onClick={() => handleGroupSelect(group)}>
-                  {group.name} (Grupo)
-                </span>
-                        </td>
-                        <td>-</td>
-                    </tr>
-                ))}
-                {people.map((person) => (
-                    <tr key={person.id}>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>
-                <span onClick={() => handlePersonSelect(person)}>
-                  {person.name} {person.lastName} (Persona)
-                </span>
-                        </td>
-                        <td>-</td>
-                        <td></td>
-                    </tr>
-                ))}
                 </tbody>
             </table>
             <Modal show={isModalVisible} onHide={handleCloseModal}>
