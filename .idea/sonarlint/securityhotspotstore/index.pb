@@ -23,3 +23,7 @@ _
 /src/components/molecules/TagTable/TagTable.scss,b\0\b0427cd8fc51b2af42606ce9f59f0b754c318d17
 `
 0src/components/molecules/LoginForm/LoginForm.tsx,8\7\87a3cea8f88a46ba5f0813c39781912d4d95c12b
+>
+src/index.scss,5\b\5bfd084cc3a318b78f32da1cd49fc9f987fb897f
+a
+1src/components/molecules/LoginForm/LoginForm.scss,5\2\52711137a45a21c000e71475d0911336119eac99

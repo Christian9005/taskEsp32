@@ -23,3 +23,7 @@ c
 3src/components/atoms/Notification/Notificacion.scss,9\2\92eeecd4d2adad90dbc118e57e488b2b6871226c
 b
 2src/components/atoms/Notification/Notificacion.tsx,1\9\1911aa77407d957ebdc09db8e089b80f04cb1b8a
+>
+src/index.scss,5\b\5bfd084cc3a318b78f32da1cd49fc9f987fb897f
+a
+1src/components/molecules/LoginForm/LoginForm.scss,5\2\52711137a45a21c000e71475d0911336119eac99

@@ -287,7 +287,6 @@ const App: FC = () => {
           <div id="dashboard">
             {!isLoggedIn && (
                 <>
-                  <h1>Gráfico de Tareas</h1>
                   <Dashboard tasks={tasks} />
                 </>
             )}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Chart } from 'react-google-charts';
 import "./Dashboard.scss";
+import moment from 'moment';
+
 interface Person {
     id: number;
     name: string;
@@ -56,8 +58,11 @@ const Dashboard: React.FC<DashboardProps> = ({ tasks }) => {
         }
     });
 
+    const currentDate = moment().format('DD/MM/YYYY');
+
     return (
         <div className="dashboard">
+            <h1>Métricas del día {currentDate}</h1>
             <h2>Gráfico de Tareas por Persona o Grupo</h2>
             <Chart
                 chartType="PieChart"
