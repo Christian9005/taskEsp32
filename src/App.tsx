@@ -7,6 +7,9 @@ import PersonTable from './components/molecules/PersonTable/PersonTable';
 import TagTable from './components/molecules/TagTable/TagTable';
 import GroupTable from './components/molecules/GroupTable/GroupTable';
 import { Button, Modal } from 'react-bootstrap';
+import Dashboard from "./components/template/Dashboard/Dashboard";
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 enum UserRole {
   Admin = 'admin',
@@ -31,8 +34,10 @@ interface Task {
   tag: Tag | null;
   startTime: string;
   endTime: string | null;
-  personId: number | null;
+  personId: number | null
+  person: Person | null;
   groupId: number | null;
+  group: Group | null;
 }
 
 interface Tag {
@@ -263,8 +268,11 @@ const App: FC = () => {
 
   return (
       <div className="app">
-        <nav>
-          <h1>Web App</h1>
+        <Navbar bg="dark" variant="dark">
+          <Navbar.Brand href="#">Web App</Navbar.Brand>
+          <Nav className="mr-auto">
+            <Nav.Link href="#dashboard">Dashboard</Nav.Link>
+          </Nav>
           {isLoggedIn ? (
               <div>
                 <p>Bienvenido, Administrador</p>
@@ -272,10 +280,18 @@ const App: FC = () => {
           ) : (
               <LoginForm handleLogin={handleLogin} />
           )}
-        </nav>
+        </Navbar>
         <div>
           <h1>Tabla de Tareas</h1>
           <TaskTable tasks={tasks} groups={groups} people={people} onDeleteTask={handleDeleteTask} isLoggedIn={isLoggedIn} />
+          <div id="dashboard">
+            {!isLoggedIn && (
+                <>
+                  <h1>Gráfico de Tareas</h1>
+                  <Dashboard tasks={tasks} />
+                </>
+            )}
+          </div>
           {isLoggedIn && (
               <>
                 <Button variant="primary" onClick={() => setOpenCreateTaskModal(true)}>Crear Tarea</Button>
