@@ -90,7 +90,7 @@ const App: FC = () => {
         tagId: Number(selectTagElement.value),
       };
 
-      const response = await axios.post('https://esp32api.azurewebsites.net/api/Tasks', newTaskData);
+      const response = await axios.post('https://espapi32.azurewebsites.net/api/Tasks', newTaskData);
       setTasks((prevTasks) => [...prevTasks, response.data]);
       setOpenCreateTaskModal(false);
     } catch (error) {
@@ -119,7 +119,7 @@ const App: FC = () => {
         peopleIds: peopleIds,
       };
 
-      const response = await axios.post('https://esp32api.azurewebsites.net/api/Groups', newGroupData);
+      const response = await axios.post('https://espapi32.azurewebsites.net/api/Groups', newGroupData);
       setGroups((prevGroups) => [...prevGroups, response.data]);
       setOpenCreateGroupModal(false);
     } catch (error) {
@@ -135,7 +135,7 @@ const App: FC = () => {
         codeNumber: tagElement.value,
         customId: customIdElement.value // Agrega el valor de customId en los datos enviados
       };
-      const response = await axios.post('https://esp32api.azurewebsites.net/api/Tags', newTagData);
+      const response = await axios.post('https://espapi32.azurewebsites.net/api/Tags', newTagData);
       setTags((prevTags) => [...prevTags, response.data]);
       setOpenCreateTagModal(false);
     } catch (error) {
@@ -154,7 +154,7 @@ const App: FC = () => {
         lastName: lastNameElement.value,
       };
 
-      const response = await axios.post('https://esp32api.azurewebsites.net/api/People', newPersonData);
+      const response = await axios.post('https://espapi32.azurewebsites.net/api/People', newPersonData);
       setPeople((prevPeople) => [...prevPeople, response.data]);
       setOpenCreatePersonModal(false);
     } catch (error) {
@@ -164,7 +164,7 @@ const App: FC = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('https://esp32api.azurewebsites.net/api/Tasks');
+      const response = await axios.get('https://espapi32.azurewebsites.net/api/Tasks');
       setTasks(response.data);
     } catch (error) {
       console.error('Error al obtener las tareas: ', error);
@@ -173,7 +173,7 @@ const App: FC = () => {
 
   const fetchGroups = async () => {
     try {
-      const response = await axios.get('https://esp32api.azurewebsites.net/api/Groups');
+      const response = await axios.get('https://espapi32.azurewebsites.net/api/Groups');
       setGroups(response.data);
     } catch (error) {
       console.error('Error al obtener los grupos: ', error);
@@ -182,7 +182,7 @@ const App: FC = () => {
 
   const fetchTags = async () => {
     try {
-      const response = await axios.get('https://esp32api.azurewebsites.net/api/Tags');
+      const response = await axios.get('https://espapi32.azurewebsites.net/api/Tags');
       setTags(response.data);
     } catch (error) {
       console.error('Error al obtener las etiquetas: ', error);
@@ -191,7 +191,7 @@ const App: FC = () => {
 
   const fetchPeople = async () => {
     try {
-      const response = await axios.get('https://esp32api.azurewebsites.net/api/People');
+      const response = await axios.get('https://espapi32.azurewebsites.net/api/People');
       setPeople(response.data);
     } catch (error) {
       console.error('Error al obtener las personas: ', error);
@@ -204,7 +204,7 @@ const App: FC = () => {
 
   const confirmDeleteTask = async () => {
     try {
-      await axios.delete(`https://esp32api.azurewebsites.net/api/Tasks/${selectedTaskId}`);
+      await axios.delete(`https://espapi32.azurewebsites.net/api/Tasks/${selectedTaskId}`);
       setTasks(tasks.filter(task => task.id !== selectedTaskId));
       setSelectedTaskId(null);
     } catch (error) {
@@ -214,7 +214,7 @@ const App: FC = () => {
 
   const handleDeletePerson = async (personId: number) => {
     try {
-      await axios.delete(`https://esp32api.azurewebsites.net/api/People/${personId}`);
+      await axios.delete(`https://espapi32.azurewebsites.net/api/People/${personId}`);
       setPeople(people.filter(person => person.id !== personId));
     } catch (error) {
       console.error('Error al eliminar la persona: ', error);
@@ -223,7 +223,7 @@ const App: FC = () => {
 
   const handleDeleteTag = async (tagId: number) => {
     try {
-      await axios.delete(`https://esp32api.azurewebsites.net/api/Tags/${tagId}`);
+      await axios.delete(`https://espapi32.azurewebsites.net/api/Tags/${tagId}`);
       setTags(tags.filter(tag => tag.id !== tagId));
     } catch (error) {
       console.error('Error al eliminar la etiqueta: ', error);
@@ -232,7 +232,7 @@ const App: FC = () => {
 
   const handleDeleteGroup = async (groupId: number) => {
     try {
-      await axios.delete(`https://esp32api.azurewebsites.net/api/Groups/${groupId}`);
+      await axios.delete(`https://espapi32.azurewebsites.net/api/Groups/${groupId}`);
       setGroups(groups.filter(group => group.id !== groupId));
     } catch (error) {
       console.error('Error al eliminar el grupo: ', error);
@@ -250,7 +250,7 @@ const App: FC = () => {
 
   const handleLogin = async (username: string, password: string) => {
     try {
-      const response = await axios.get('https://esp32api.azurewebsites.net/api/Admin');
+      const response = await axios.get('https://espapi32.azurewebsites.net/api/Admin');
       const admins = response.data;
       const admin = admins.find((admin: any) => admin.username === username && admin.password === password);
 

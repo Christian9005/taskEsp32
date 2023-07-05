@@ -88,7 +88,7 @@ const TaskTable: FC<TaskTableProps> = ({
             };
 
             const response = await axios.post(
-                'https://esp32api.azurewebsites.net/api/Tasks',
+                'https://espapi32.azurewebsites.net/api/Tasks',
                 taskData
             );
             setSelectedTaskId(response.data.id);
